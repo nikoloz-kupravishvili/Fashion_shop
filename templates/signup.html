@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}signup{% endblock %}
+{% block content %}
+
+
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+  <div class="card shadow-lg p-4" style="max-width: 450px; width: 100%;">
+    <h3 class="text-center mb-4 text-danger">Create Your Account</h3>
+    <form method="POST" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        {{ form.hidden_tag() }}
+        {{form.username(class="form-control", id="username", placeholder="Your name")}}
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        
+        {{form.email(class="form-control", id="email", placeholder="you@example.com")}}
+      </div>
+      <div class="mb-3">
+        <label for="password1" class="form-label">Password</label>
+        
+        {{form.password(class="form-control" ,id="password1",  placeholder="••••••••")}}
+      </div>
+      <div class="mb-3">
+        <label for="password2" class="form-label">Confirm Password</label>
+        
+        {{form.confirmPassword(class="form-control" ,id="password2" , placeholder="••••••••" )}}
+      </div>
+      <div class="d-grid mb-3">
+       
+        {{form.submit(class="btn btn-danger")}}
+      </div>
+      <div class="text-center">
+        <small>Already have an account? <a href="/login">Login</a></small>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

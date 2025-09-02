@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Cart{% endblock %}
+{% block content %}
+
+<center>
+
+
+<div id="cart">
+
+</div>
+
+
+
+      
+
+
+<button type="button" class="btn btn-danger" onclick="localStorage.removeItem('cart'); location.reload()">
+  Clear Cart
+</button>
+
+
+</center>
+{% endblock %}

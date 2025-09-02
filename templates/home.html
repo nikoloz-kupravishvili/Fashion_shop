@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<!-- Hero Section -->
+
+{% if current_user.is_authenticated %}
+
+<section class="py-5 text-center text-light" style="background: linear-gradient(90deg, #00f2f2, #096b72);">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Welcome to Meoradebi , {{current_user.username}}</h1>
+    <p class="lead mb-4">Style starts here. Join a fashion-forward community where your vibe meets your wardrobe.</p>
+    
+    <a href="/about" class="btn btn-outline-light btn-lg">Learn More</a>
+  </div>
+</section>
+
+{%else:%}
+<section class="py-5 text-center text-light" style="background: linear-gradient(90deg, #00f2f2, #096b72);">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Welcome to Meoradebi</h1>
+    <p class="lead mb-4">Style starts here. Join a fashion-forward community where your vibe meets your wardrobe.</p>
+    <a href="/login" class="btn btn-light btn-lg me-2">Get Started</a>
+    <a href="#" class="btn btn-outline-light btn-lg">Learn More</a>
+  </div>
+</section>
+{%endif%}
+<!-- Features -->
+<section class="py-5 bg-light text-dark" style="background: linear-gradient(90deg, #FFEAEE, #7F675B) ">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <div class="p-4 border rounded-3 shadow-sm h-100">
+          <h5 class="fw-bold">Personalized Experience</h5>
+          <p class="small">We recommend styles based on your vibe and personality — not just trends.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-4 border rounded-3 shadow-sm h-100">
+          <h5 class="fw-bold">Fast & Secure</h5>
+          <p class="small">Your privacy is our priority. Enjoy a fast and safe experience across the site.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-4 border rounded-3 shadow-sm h-100">
+          <h5 class="fw-bold">Community-Driven</h5>
+          <p class="small">Get styling tips, reviews, and ideas from fashion lovers like you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if not current_user.is_authenticated %}
+<section class="py-5 text-center text-light" style="background: linear-gradient(90deg, #00f2f2, #096b72);">
+  <div class="container">
+    <h2 class="mb-3 fw-bold">Ready to express yourself?</h2>
+    <p class="lead mb-4">Create your account now and step into your new look.</p>
+    <a href="/register" class="btn btn-outline-light btn-lg">Join Now</a>
+  </div>
+</section>
+{%endif%}
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}admin{% endblock %}
+{% block content %}
+
+
+{%if current_user.role == 'admin' :%}
+    <div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            {{ form.name.label(class="form-label") }}
+            {{ form.name(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.condition.label(class="form-label") }}
+            {{ form.condition(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.Clothtype.label(class="form-label") }}
+            {{ form.Clothtype(class="form-control") }}
+        </div>
+        
+
+
+        <div class="mb-3">
+            {{ form.price.label(class="form-label") }}
+            {{ form.price(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.image1.label(class="form-label") }}
+            {{ form.image1(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.image2.label(class="form-label") }}
+            {{ form.image2(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.image3.label(class="form-label") }}
+            {{ form.image3(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.image4.label(class="form-label") }}
+            {{ form.image4(class="form-control") }}
+        </div>
+
+        <div class="d-grid">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+    </div>
+    {%else:%}
+    <center><h1>you are not admin :( </h1></center>
+    {%endif%}
+{% endblock %}
